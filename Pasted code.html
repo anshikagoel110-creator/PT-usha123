@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Something Special 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a6c1ee);
+  background-size:400% 400%;
+  animation:gradientMove 10s ease infinite;
+  font-family:'Playfair Display', serif;
+  overflow:hidden;
+  position:relative;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Floating hearts */
+.heart{
+  position:absolute;
+  width:10px;
+  height:10px;
+  background:white;
+  transform:rotate(45deg);
+  animation:floatUp 6s linear infinite;
+  opacity:0.6;
+}
+
+.heart:before,
+.heart:after{
+  content:'';
+  position:absolute;
+  width:10px;
+  height:10px;
+  background:white;
+  border-radius:50%;
+}
+
+.heart:before{ top:-5px; left:0; }
+.heart:after{ left:-5px; top:0; }
+
+@keyframes floatUp{
+  0%{ bottom:-10px; opacity:0; }
+  20%{ opacity:0.7; }
+  100%{ bottom:110%; opacity:0; }
+}
+
+/* Screens */
+.container{
+  position:absolute;
+  text-align:center;
+  width:90%;
+  max-width:400px;
+  display:none;
+  animation:fadeIn 0.82s ease forwards;
+}
+
+.container.active{
+  display:block;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+img{
+  width:150px;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:24px;
+  margin-bottom:15px;
+  color:black;
+}
+
+p{
+  font-size:18px;
+  margin-bottom:20px;
+  color:black;
+}
+
+button{
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+  background:linear-gradient(45deg,#ff00cc,#ff0066);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+</style>
+</head>
+
+<body>
+<audio id="bgMusic">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Screen 1 -->
+<div class="container active" id="screen1">
+  <img src="https://cdn-icons-png.flaticon.com/512/6467/6467774.png">
+  <h1>I have a little secret for you
+    <br>
+    <h1 style="color: red;">My Chilli Chicken...</h1>
+  </h1>
+  <p>And trust me... only
+    <br>
+    <br> <b> <i> YOU DESERVE THIS ✨</i></b></p>
+  <button onclick="nextScreen(2)">Open it🤍</button>
+</div>
+
+<!-- Screen 2 -->
+<div class="container" id="screen2">
+  <img src="https://cdn.cdnstep.com/mS5gG2GXO6C37C5TRA5q/cover-1.thumb256.png">
+  <h1>Are you really ready to know...?
+    <br> I hope you are!
+    <br>
+    <br> <b><i>Aaloooooooo</i></b>
+  </h1>
+  <button onclick="nextScreen(3)">Show Me🤍</button>
+</div>
+
+<!-- Screen 3 -->
+<div class="container" id="screen3">
+    <img src="https://i.pinimg.com/originals/8d/e5/ae/8de5ae0ee96f78ee1b8db8e2db2b0bfa.png">
+  <h1>Here comes the surprise 💖</h1>
+  <p>You naughty.
+    <br> I know you were waiting for this😘
+    <br> But remember, this is just for you only
+    <br> Don't share it with anyone else, okay?
+    <br>
+    <br> <b> Meri mithi dil </b>
+</p>
+  </p>
+  <button onclick="startAutoSlides()">Go on🤍</button>
+</div>
+
+<!-- Screen 4 -->
+<div class="container" id="screen4">
+  <h1>Tumhara mera milna likha toh hoga kahin 💖</h1>
+
+</div>
+
+<!-- Screen 5 -->
+<div class="container" id="screen5">
+  <h1>Naseebon ka sitara mila toh hoga kahin 💖</h1>
+</div>
+
+<!-- Screen 6 -->
+<div class="container" id="screen6">
+  <h1>Na jaane kyun, ae humnasheen,
+    <br> hai mere dil ko ye yakeen 💖</h1>
+</div>
+
+<!-- Screen 7 -->
+<div class="container" id="screen7">
+  <h1>Ki tum sang ho to bigdi baatein,
+    <br> saari ban jaayengi 💖</h1>
+</div>
+
+<!-- Screen 8 -->
+<div class="container" id="screen8">
+  <h1>tum joh has do,
+    <br> roothi raatein saari man jaayengi 💖</h1>
+</div>
+
+<!-- Screen 9 -->
+<div class="container" id="screen9">
+  <h1>Tumse behtar,tumse pyara,yaara,
+    <br> koi nahin 💖</h1>
+</div>
+
+<!-- Screen 10 -->
+<div class="container" id="screen10">
+    <img src="https://i.pinimg.com/originals/0e/98/8a/0e988a5f956b1b538e4c78a14553c375.gif">
+  <h2>Only for you 💖</h2>
+  <br>
+  <p> <i>Buddy</i></p>
+  <br>
+  <b><h1><b> <i>You are THEODORE</h1></b></i></b>
+  <br>
+  <br>
+  <button onclick="nextScreen(1)">Thank You💖</button>
+</div>
+
+<script>
+function nextScreen(num){
+  document.querySelectorAll(".container").forEach(el=>el.classList.remove("active"));
+  document.getElementById("screen"+num).classList.add("active");
+}
+
+function nextScreen(num){
+  document.querySelectorAll(".container").forEach(el=>el.classList.remove("active"));
+  document.getElementById("screen"+num).classList.add("active");
+}
+
+function startAutoSlides(){
+
+  let music = document.getElementById("bgMusic");
+
+  music.currentTime = 0;
+
+  music.play().then(()=>{
+    console.log("🎧 Music chal gaya");
+  }).catch(err=>{
+    console.log("❌ Play blocked:", err);
+    alert("Click again 😅 (browser block kar raha hai)");
+  });
+
+  let currentScreen = 4;
+  let totalScreens = 10;
+
+  const timings = [
+    { screen: 4, delay: 0 }, //0:12
+    { screen: 5, delay: 6500 }, //0:15
+    { screen: 6, delay: 13000 }, //0:17
+    { screen: 7, delay: 20000 }, //0:22
+    { screen: 8, delay: 26500 }, //0:25
+    { screen: 9, delay: 32000 }, //0:31
+    { screen: 10, delay: 40000 } //0:39
+  ];
+
+  timings.forEach(item => {
+    setTimeout(()=>{
+      nextScreen(item.screen);
+    }, item.delay);
+  });
+
+}
+</script>
+
+<script>
+function nextScreen(num){
+  document.querySelectorAll(".container").forEach(el=>el.classList.remove("active"));
+  document.getElementById("screen"+num).classList.add("active");
+}
+
+// Floating hearts generator
+setInterval(()=>{
+  let heart = document.createElement("div");
+  heart.className="heart";
+  heart.style.left=Math.random()*100+"%";
+  heart.style.animationDuration=(4+Math.random()*3)+"s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+},400);
+</script>
+
+</body>
+</html>
